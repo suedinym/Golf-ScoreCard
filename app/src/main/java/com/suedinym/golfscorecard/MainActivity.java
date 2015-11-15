@@ -16,9 +16,11 @@ public class MainActivity extends ListActivity {
         // initialize holes
         int strokes = 0;
         for (int i = 0; i < mHoles.length; i++){
-            mHoles[i] = new Hole("Hole" + (i+1)+ ";", strokes);
+            mHoles[i] = new Hole("Hole " + (i+1)+ ":", strokes);
         }
       mListAdapter = new ListAdapter(this, mHoles);
         setListAdapter(mListAdapter);
     }
 }
+//// TODO: 11/15/15 find out what is putting the number smack up next to the Hole and also adding 
+// // TODO: 11/15/15 semi colon, and fix that part
