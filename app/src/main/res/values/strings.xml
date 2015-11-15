@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Golf ScoreCard</string>
+    <string name="minus_button">-</string>
+    <string name="plus_button">+</string>
 </resources>
