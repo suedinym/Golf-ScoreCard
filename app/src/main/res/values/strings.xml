@@ -2,4 +2,6 @@
     <string name="app_name">Golf ScoreCard</string>
     <string name="minus_button">-</string>
     <string name="plus_button">+</string>
+    <string name="hole_1_text">Hole 1</string>
+    <string name="stroke_0_text">0</string>
 </resources>
