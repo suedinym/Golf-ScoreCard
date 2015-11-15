@@ -1,0 +1,1 @@
+App built for Treehouse Android Activity Lifecycle course. A simple checklist scorecard.
