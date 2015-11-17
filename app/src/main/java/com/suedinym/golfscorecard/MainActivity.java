@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends ListActivity {
     private static final String PREFS_FILE = "com.suedinym.golfscorecard.preferences";
@@ -40,5 +42,34 @@ mEditor = mSharedPreferences.edit();
         }
         mEditor.apply();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_clear_strokes) {
+            mEditor.clear();
+            mEditor.apply();
+
+            for (Hole hole: mHoles){
+                hole.setmStrokeCount(0);
+            }
+            mListAdapter.notifyDataSetChanged();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
-//// TODO: 11/15/15 figure out why it will only add one 
+//// TODO: 11/15/15 figure out why it will only add one
+// // TODO: 11/16/15 figure out why it is clearing out the strokes when I scroll as well as when I clear from the menu
